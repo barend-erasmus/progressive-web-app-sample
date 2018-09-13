@@ -43,15 +43,17 @@
     </div>
 
     <script>
-        navigator.geolocation.getCurrentPosition(function (position) {
-            const map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 13);
+        if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                const map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 13);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            
-            const marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-        });
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                const marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+            });
+        }
     </script>
 </body>
 
