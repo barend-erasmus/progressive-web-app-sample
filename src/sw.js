@@ -1,4 +1,4 @@
-const version = "1.0.1";
+const version = "1.0.2";
 const cacheName = `progressive-web-app-sample-${version}`;
 
 self.addEventListener("install", e => {
