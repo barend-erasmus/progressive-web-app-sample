@@ -87,11 +87,11 @@
     <script>
         function update() {
             if (navigator.onLine) {
-                document.querySelectorAll('.btn.btn-danger').forEach((element) => {
+                document.querySelectorAll('.btn.btn-danger').forEach(function (element) {
                     element.classList = 'btn btn-primary';
                 });
             } else {
-                document.querySelectorAll('.btn.btn-primary').forEach((element) => {
+                document.querySelectorAll('.btn.btn-primary').forEach(function (element) {
                     element.classList = 'btn btn-danger';
                 });
             }
